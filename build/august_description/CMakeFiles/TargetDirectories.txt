@@ -1,0 +1,13 @@
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/download_extra_data.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/tests.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/run_tests.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/clean_test_results.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/doxygen.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/_catkin_empty_exported_target.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/test.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/edit_cache.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/rebuild_cache.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/list_install_components.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/install.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/install/local.dir
+/Users/andridgemunene/Desktop/openseasons/build/august_description/CMakeFiles/install/strip.dir

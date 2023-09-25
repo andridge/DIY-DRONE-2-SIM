@@ -1,0 +1,1 @@
+/Users/andridgemunene/Desktop/openseasons/devel/.private/august_description/share/august_description/cmake/august_descriptionConfig.cmake

@@ -1,0 +1,8 @@
+prefix=/Users/andridgemunene/Desktop/openseasons/devel/.private/august_description
+
+Name: august_description
+Description: Description of august_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

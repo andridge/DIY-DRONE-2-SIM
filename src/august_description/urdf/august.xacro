@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="august" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find august_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find august_description)/urdf/august.trans" />
+<xacro:include filename="$(find august_description)/urdf/august.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0367840763564357 0.0188810759037174 0.006751541549144135" rpy="0 0 0"/>
+    <mass value="0.2085309750042539"/>
+    <inertia ixx="0.000917" iyy="0.000923" izz="0.001817" ixy="2e-05" iyz="-9e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="a`_1">
+  <inertial>
+    <origin xyz="-2.725265012409883e-07 -4.636414164538305e-07 -0.005530056891346984" rpy="0 0 0"/>
+    <mass value="0.014067889406911494"/>
+    <inertia ixx="4.6e-05" iyy="1e-06" izz="4.7e-05" ixy="-4e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082471 0.081741 -0.032559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/a`_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082471 0.081741 -0.032559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/a`_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="b_1">
+  <inertial>
+    <origin xyz="6.271052868517257e-07 1.3341108107134403e-07 -0.005530056412288528" rpy="0 0 0"/>
+    <mass value="0.009704804866217201"/>
+    <inertia ixx="5e-06" iyy="2.7e-05" izz="3.2e-05" ixy="1.2e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.084483 -0.117659 -0.037559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/b_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.084483 -0.117659 -0.037559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/b_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="b`_1">
+  <inertial>
+    <origin xyz="-1.112784039081216e-07 3.4862018932768635e-07 -0.005530056412289014" rpy="0 0 0"/>
+    <mass value="0.014067889406911485"/>
+    <inertia ixx="2.1e-05" iyy="2.6e-05" izz="4.7e-05" ixy="-2.3e-05" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.154898 -0.114909 -0.037559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/b`_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.154898 -0.114909 -0.037559" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/b`_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="a_1">
+  <inertial>
+    <origin xyz="3.912257227900451e-07 4.060967898622536e-07 -0.00552943728347341" rpy="0 0 0"/>
+    <mass value="0.014067889406911461"/>
+    <inertia ixx="4e-06" iyy="4.3e-05" izz="4.7e-05" ixy="-1.2e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.154704 0.082227 -0.032573" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/a_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.154704 0.082227 -0.032573" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://august_description/meshes/a_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 47" type="continuous">
+  <origin xyz="-0.082471 -0.081741 0.032559" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="a`_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 48" type="continuous">
+  <origin xyz="-0.084483 0.117659 0.037559" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="b_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 49" type="continuous">
+  <origin xyz="0.154898 0.114909 0.037559" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="b`_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 50" type="continuous">
+  <origin xyz="0.154704 -0.082227 0.032573" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="a_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+</robot>
