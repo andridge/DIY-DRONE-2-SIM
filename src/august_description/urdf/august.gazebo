@@ -42,4 +42,86 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
+	<!-- ================================= -->
+	<!-- Define the lift-Drag plugin -->
+<gazebo>
+<!-- Provide a Positive Velocity -->
+	<plugin name="quad_prop1" filename="libLiftDragPlugin.so">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 -1</upward>
+	<link_name>a`_1</link_name>
+	<control_joint>joint_front_right_prop</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Negative Velocity -->
+	<plugin name="quad_prop2" filename="libLiftDragPlugin.so">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 1</upward>
+	<link_name>a_1</link_name>
+	<control_joint>joint_front_left_prop</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Negative Velocity -->
+	<plugin name="quad_prop3" filename="libLiftDragPlugin.so">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 1</upward>
+	<link_name>b`_1</link_name>
+	<control_joint>joint_back_right_prop</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Positive Velocity -->
+	<plugin name="quad_prop4" filename="libLiftDragPlugin.so">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 -1</upward>
+	<link_name>b_1</link_name>
+	<control_joint>joint_back_left_prop</control_joint>
+	</plugin>
+</gazebo>
 </robot>

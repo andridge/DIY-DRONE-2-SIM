@@ -1,12 +1,17 @@
 <launch>
-  <param name="robot_description" command="$(find xacro)/xacro $(find august_description)/urdf/august.xacro"/>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model august"/>
+  <!-- Set the robot_description parameter using the URDF file -->
+  <param name="robot_description" command="$(find august_description)/urdf/august.urdf"/>
+
+  <!-- Start the spawn_model service to spawn the robot model -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model august" />
+
+  <!-- Include the empty_world launch file -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find august_description)/worlds/alien.world" />
-    <arg name="paused" value="false"/>
-    <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
+    <arg name="paused" value="false" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="true" />
+    <arg name="headless" value="false" />
+    <arg name="debug" value="false" />
   </include>
 </launch>

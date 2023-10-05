@@ -1,0 +1,9 @@
+Symlinking /Users/andridgemunene/Desktop/openseasons/devel/lib/pkgconfig/august_description.pc
+Symlinking /Users/andridgemunene/Desktop/openseasons/devel/share/august_description/cmake/august_descriptionConfig.cmake
+Symlinking /Users/andridgemunene/Desktop/openseasons/devel/share/august_description/cmake/august_descriptionConfig-version.cmake
+Cleaning: (/Users/andridgemunene/Desktop/openseasons/devel/.private/august_description/lib/august_description/talker, /Users/andridgemunene/Desktop/openseasons/devel/lib/august_description/talker)
+Cleaning: (/Users/andridgemunene/Desktop/openseasons/devel/.private/august_description/lib/august_description/listener, /Users/andridgemunene/Desktop/openseasons/devel/lib/august_description/listener)
+Unlinking: /Users/andridgemunene/Desktop/openseasons/devel/lib/august_description/talker
+Already unlinked: {}
+Unlinking: /Users/andridgemunene/Desktop/openseasons/devel/lib/august_description/listener
+Already unlinked: {}

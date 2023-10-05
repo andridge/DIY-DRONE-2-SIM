@@ -3,7 +3,7 @@
 
 <xacro:include filename="$(find august_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find august_description)/urdf/august.trans" />
-<xacro:include filename="$(find august_description)/urdf/august.gazebo" />
+<xacro:include filename="$(find august_description)/urdf/august.gazebo" />            
 <link name="base_link">
   <inertial>
     <origin xyz="0.0367840763564357 0.0188810759037174 0.006751541549144135" rpy="0 0 0"/>

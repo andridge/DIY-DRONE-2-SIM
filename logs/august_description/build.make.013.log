@@ -1,0 +1,6 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/listener.dir/src/listener.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/talker.dir/src/talker.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable /Users/andridgemunene/Desktop/openseasons/devel/.private/august_description/lib/august_description/talker[0m
+[ 75%] Built target talker
+[100%] [32m[1mLinking CXX executable /Users/andridgemunene/Desktop/openseasons/devel/.private/august_description/lib/august_description/listener[0m
+[100%] Built target listener
