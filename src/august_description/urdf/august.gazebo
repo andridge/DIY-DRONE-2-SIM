@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<robot name="august" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="a_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="b`_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="b_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="a`_1_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+<!-- ================================= -->
+	<!-- Define the lift-Drag plugin -->
+<gazebo>
+<!-- Provide a Positive Velocity -->
+	<plugin name="quad_prop1" filename="libLiftDragPlugin.dylib">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 -1</upward>
+	<link_name>a`_1_1</link_name>
+	<control_joint>Revolute 58</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Negative Velocity -->
+	<plugin name="quad_prop2" filename="libLiftDragPlugin.dylib">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 1</upward>
+	<link_name>a_1_1</link_name>
+	<control_joint>Revolute 55</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Negative Velocity -->
+	<plugin name="quad_prop3" filename="libLiftDragPlugin.dylib">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 1</upward>
+	<link_name>b`_1_1</link_name>
+	<control_joint>Revolute 56</control_joint>
+	</plugin>
+</gazebo>
+<gazebo>
+<!-- Provide a Positive Velocity -->
+	<plugin name="quad_prop4" filename="libLiftDragPlugin.dylib">
+	<a0>0.1</a0>
+	<cla>0.1</cla>
+	<cda>0.01</cda>
+	<cma>0.0</cma>
+	<alpha_stall>0.2</alpha_stall>
+	<cla_stall>-0.2</cla_stall>
+	<cda_stall>1.0</cda_stall>
+	<cma_stall>0.0</cma_stall>
+	<cp>0 0.5 0</cp>
+	<area>0.762</area>
+	<air_density>1.2041</air_density>
+	<forward>1 0 0</forward>
+	<upward>0 0 -1</upward>
+	<link_name>b_1_1</link_name>
+	<control_joint>Revolute 57</control_joint>
+	</plugin>
+</gazebo>
+</robot>

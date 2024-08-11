@@ -1,0 +1,431 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      The system is: Darwin - 23.4.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang 
+      Build flags: -ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/andridgemunene/miniconda3/include
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/3.27.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang++ 
+      Build flags: -ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-fmessage-length=0;-isystem;/Users/andridgemunene/miniconda3/include
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/3.27.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3"
+      binary: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3'
+        
+        Run Build Command(s): /Users/andridgemunene/miniconda3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_108c0/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_108c0.dir/build.make CMakeFiles/cmTC_108c0.dir/build
+        gmake[1]: Entering directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3'
+        Building C object CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        clang version 15.0.7
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/andridgemunene/miniconda3/bin
+        clang-15: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         (in-process)
+         "/Users/andridgemunene/miniconda3/bin/clang-15" -cc1 -triple arm64-apple-macosx14.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 609 -v -fcoverage-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3 -resource-dir /Users/andridgemunene/miniconda3/lib/clang/15.0.7 -dependency-file CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/andridgemunene/miniconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdebug-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3 -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -x c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target arm64-apple-darwin23.4.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Users/andridgemunene/miniconda3/include
+         /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking C executable cmTC_108c0
+        /Users/andridgemunene/miniconda3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_108c0.dir/link.txt --verbose=1
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/andridgemunene/miniconda3/lib -L/Users/andridgemunene/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -o cmTC_108c0 
+        clang version 15.0.7
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/andridgemunene/miniconda3/bin
+         "/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/andridgemunene/miniconda3/lib/libLTO.15.dylib -dynamic -arch arm64 -platform_version macos 14.0.0 14.4 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_108c0 -L/Users/andridgemunene/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/andridgemunene/miniconda3/lib -v CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -lSystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-609
+        BUILD 01:51:46 Oct 12 2023
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+        Library search paths:
+        	/Users/andridgemunene/miniconda3/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/
+        gmake[1]: Leaving directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Users/andridgemunene/miniconda3/include]
+          add: [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        end of search list found
+        collapse include dir [/Users/andridgemunene/miniconda3/include] ==> [/Users/andridgemunene/miniconda3/include]
+        collapse include dir [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include] ==> [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        implicit include dirs: [/Users/andridgemunene/miniconda3/include;/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(arm64-apple-darwin20\\.0\\.0-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3']
+        ignore line: []
+        ignore line: [Run Build Command(s): /Users/andridgemunene/miniconda3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_108c0/fast]
+        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_108c0.dir/build.make CMakeFiles/cmTC_108c0.dir/build]
+        ignore line: [gmake[1]: Entering directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3']
+        ignore line: [Building C object CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 15.0.7]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/andridgemunene/miniconda3/bin]
+        ignore line: [clang-15: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ (in-process)]
+        ignore line: [ "/Users/andridgemunene/miniconda3/bin/clang-15" -cc1 -triple arm64-apple-macosx14.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 609 -v -fcoverage-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3 -resource-dir /Users/andridgemunene/miniconda3/lib/clang/15.0.7 -dependency-file CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/andridgemunene/miniconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdebug-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-dESDl3 -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -x c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target arm64-apple-darwin23.4.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Users/andridgemunene/miniconda3/include]
+        ignore line: [ /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_108c0]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_108c0.dir/link.txt --verbose=1]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/andridgemunene/miniconda3/lib -L/Users/andridgemunene/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -o cmTC_108c0 ]
+        ignore line: [clang version 15.0.7]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/andridgemunene/miniconda3/bin]
+        link line: [ "/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/andridgemunene/miniconda3/lib/libLTO.15.dylib -dynamic -arch arm64 -platform_version macos 14.0.0 14.4 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_108c0 -L/Users/andridgemunene/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/andridgemunene/miniconda3/lib -v CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o -lSystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+          arg [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Users/andridgemunene/miniconda3/lib/libLTO.15.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [14.0.0] ==> ignore
+          arg [14.4] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_108c0] ==> ignore
+          arg [-L/Users/andridgemunene/miniconda3/lib] ==> dir [/Users/andridgemunene/miniconda3/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-dead_strip_dylibs] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/Users/andridgemunene/miniconda3/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_108c0.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+        Library search paths: [;/Users/andridgemunene/miniconda3/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+        remove lib [System]
+        remove lib [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Users/andridgemunene/miniconda3/lib] ==> [/Users/andridgemunene/miniconda3/lib]
+        collapse library dir [/Users/andridgemunene/miniconda3/lib] ==> [/Users/andridgemunene/miniconda3/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/Users/andridgemunene/miniconda3/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc"
+      binary: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/andridgemunene/miniconda3/include"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc'
+        
+        Run Build Command(s): /Users/andridgemunene/miniconda3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_61315/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_61315.dir/build.make CMakeFiles/cmTC_61315.dir/build
+        gmake[1]: Entering directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc'
+        Building CXX object CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang++   -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        clang version 15.0.7
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/andridgemunene/miniconda3/bin
+        clang-15: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         (in-process)
+         "/Users/andridgemunene/miniconda3/bin/clang-15" -cc1 -triple arm64-apple-macosx14.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 609 -v -fcoverage-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc -resource-dir /Users/andridgemunene/miniconda3/lib/clang/15.0.7 -dependency-file CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isystem /Users/andridgemunene/miniconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -stdlib=libc++ -internal-isystem /Users/andridgemunene/miniconda3/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdeprecated-macro -fdebug-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc -ferror-limit 19 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target arm64-apple-darwin23.4.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Users/andridgemunene/miniconda3/include
+         /Users/andridgemunene/miniconda3/bin/../include/c++/v1
+         /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking CXX executable cmTC_61315
+        /Users/andridgemunene/miniconda3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61315.dir/link.txt --verbose=1
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang++ -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/andridgemunene/miniconda3/lib -L/Users/andridgemunene/miniconda3/lib -v -Wl,-v CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_61315 
+        clang version 15.0.7
+        Target: arm64-apple-darwin20.0.0
+        Thread model: posix
+        InstalledDir: /Users/andridgemunene/miniconda3/bin
+         "/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/andridgemunene/miniconda3/lib/libLTO.15.dylib -dynamic -arch arm64 -platform_version macos 14.0.0 14.4 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_61315 -L/Users/andridgemunene/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/andridgemunene/miniconda3/lib -v CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-609
+        BUILD 01:51:46 Oct 12 2023
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+        Library search paths:
+        	/Users/andridgemunene/miniconda3/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/
+        gmake[1]: Leaving directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Users/andridgemunene/miniconda3/include]
+          add: [/Users/andridgemunene/miniconda3/bin/../include/c++/v1]
+          add: [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        end of search list found
+        collapse include dir [/Users/andridgemunene/miniconda3/include] ==> [/Users/andridgemunene/miniconda3/include]
+        collapse include dir [/Users/andridgemunene/miniconda3/bin/../include/c++/v1] ==> [/Users/andridgemunene/miniconda3/include/c++/v1]
+        collapse include dir [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include] ==> [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        implicit include dirs: [/Users/andridgemunene/miniconda3/include;/Users/andridgemunene/miniconda3/include/c++/v1;/Users/andridgemunene/miniconda3/lib/clang/15.0.7/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:6 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(arm64-apple-darwin20\\.0\\.0-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc']
+        ignore line: []
+        ignore line: [Run Build Command(s): /Users/andridgemunene/miniconda3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_61315/fast]
+        ignore line: [/opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_61315.dir/build.make CMakeFiles/cmTC_61315.dir/build]
+        ignore line: [gmake[1]: Entering directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc']
+        ignore line: [Building CXX object CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang++   -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -c /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang version 15.0.7]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/andridgemunene/miniconda3/bin]
+        ignore line: [clang-15: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ (in-process)]
+        ignore line: [ "/Users/andridgemunene/miniconda3/bin/clang-15" -cc1 -triple arm64-apple-macosx14.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.4 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu apple-m1 -target-feature +v8.5a -target-feature +crc -target-feature +lse -target-feature +rdm -target-feature +crypto -target-feature +dotprod -target-feature +fp-armv8 -target-feature +neon -target-feature +fp16fml -target-feature +ras -target-feature +rcpc -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-feature +sm4 -target-feature +sha3 -target-feature +sha2 -target-feature +aes -target-abi darwinpcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 609 -v -fcoverage-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc -resource-dir /Users/andridgemunene/miniconda3/lib/clang/15.0.7 -dependency-file CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isystem /Users/andridgemunene/miniconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -stdlib=libc++ -internal-isystem /Users/andridgemunene/miniconda3/bin/../include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdeprecated-macro -fdebug-compilation-dir=/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-Uq3zjc -ferror-limit 19 -fvisibility-inlines-hidden -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fmax-type-align=16 -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 15.0.7 based upon LLVM 15.0.7 default target arm64-apple-darwin23.4.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Users/andridgemunene/miniconda3/include]
+        ignore line: [ /Users/andridgemunene/miniconda3/bin/../include/c++/v1]
+        ignore line: [ /Users/andridgemunene/miniconda3/lib/clang/15.0.7/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_61315]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61315.dir/link.txt --verbose=1]
+        ignore line: [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang++ -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -Wl -pie -Wl -headerpad_max_install_names -Wl -dead_strip_dylibs -Wl -rpath /Users/andridgemunene/miniconda3/lib -L/Users/andridgemunene/miniconda3/lib -v -Wl -v CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_61315 ]
+        ignore line: [clang version 15.0.7]
+        ignore line: [Target: arm64-apple-darwin20.0.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Users/andridgemunene/miniconda3/bin]
+        link line: [ "/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld" -demangle -lto_library /Users/andridgemunene/miniconda3/lib/libLTO.15.dylib -dynamic -arch arm64 -platform_version macos 14.0.0 14.4 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_61315 -L/Users/andridgemunene/miniconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/andridgemunene/miniconda3/lib -v CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+          arg [/Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Users/andridgemunene/miniconda3/lib/libLTO.15.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [14.0.0] ==> ignore
+          arg [14.4] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_61315] ==> ignore
+          arg [-L/Users/andridgemunene/miniconda3/lib] ==> dir [/Users/andridgemunene/miniconda3/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-dead_strip_dylibs] ==> ignore
+          arg [-rpath] ==> ignore
+          arg [/Users/andridgemunene/miniconda3/lib] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_61315.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lc++] ==> lib [c++]
+          arg [-lSystem] ==> lib [System]
+          arg [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a] ==> lib [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+        Library search paths: [;/Users/andridgemunene/miniconda3/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/]
+        remove lib [System]
+        remove lib [/Users/andridgemunene/miniconda3/lib/clang/15.0.7/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Users/andridgemunene/miniconda3/lib] ==> [/Users/andridgemunene/miniconda3/lib]
+        collapse library dir [/Users/andridgemunene/miniconda3/lib] ==> [/Users/andridgemunene/miniconda3/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+        implicit libs: [c++]
+        implicit objs: []
+        implicit dirs: [/Users/andridgemunene/miniconda3/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/andridgemunene/miniconda3/envs/ros/lib/cmake/GTest/GTestConfig.cmake:29 (find_dependency)"
+      - "/Users/andridgemunene/miniconda3/share/cmake-3.27/Modules/FindGTest.cmake:194 (find_package)"
+      - "/Users/andridgemunene/miniconda3/envs/ros/share/catkin/cmake/test/gtest.cmake:340 (find_package)"
+      - "/Users/andridgemunene/miniconda3/envs/ros/share/catkin/cmake/all.cmake:164 (include)"
+      - "/Users/andridgemunene/miniconda3/envs/ros/share/catkin/cmake/catkinConfig.cmake:20 (include)"
+      - "CMakeLists.txt:58 (find_package)"
+    directories:
+      source: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx"
+      binary: "/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx'
+        
+        Run Build Command(s): /Users/andridgemunene/miniconda3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_e1a68/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_e1a68.dir/build.make CMakeFiles/cmTC_e1a68.dir/build
+        gmake[1]: Entering directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx'
+        Building C object CMakeFiles/cmTC_e1a68.dir/src.c.o
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang -DCMAKE_HAVE_LIBC_PTHREAD  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_e1a68.dir/src.c.o -MF CMakeFiles/cmTC_e1a68.dir/src.c.o.d -o CMakeFiles/cmTC_e1a68.dir/src.c.o -c /Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx/src.c
+        Linking C executable cmTC_e1a68
+        /Users/andridgemunene/miniconda3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1a68.dir/link.txt --verbose=1
+        /Users/andridgemunene/miniconda3/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/andridgemunene/miniconda3/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/andridgemunene/miniconda3/lib -L/Users/andridgemunene/miniconda3/lib  CMakeFiles/cmTC_e1a68.dir/src.c.o -o cmTC_e1a68 
+        gmake[1]: Leaving directory '/Users/andridgemunene/Desktop/openseasons/build/CMakeFiles/CMakeScratch/TryCompile-ondjpx'
+        
+      exitCode: 0
+...

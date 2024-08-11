@@ -1,0 +1,33 @@
+<launch>
+    <!-- Load controller parameters -->
+    <rosparam file="$(find august_description)/launch/controller.yaml" command="load"/>
+
+    <!-- Set the robot_description parameter using the URDF file -->
+    <param name="robot_description" textfile="$(find august_description)/urdf/august.urdf"/>
+
+    <!-- Arguments for robot position -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="1"/>
+
+    <!-- Spawn the robot model in Gazebo -->
+    <node name="august_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model august -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+    <!-- Controller manager node -->
+    <node name="controller_manager" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="august"
+          args="Revolute_55_position_controller Revolute_56_position_controller Revolute_57_position_controller Revolute_58_position_controller joint_state_controller"/>
+
+    <!-- Robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <param name="publish_frequency" type="double" value="500.0"/>
+    </node>
+
+    <!-- Gazebo world argument -->
+    <arg name="world" default="$(find august_description)/worlds/venus.world"/>
+    <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="--verbose -world $(arg world)" />
+
+    <!-- Run the custom script two.py -->
+    <node name="two_script" pkg="august_description" type="two.py" output="screen"/>
+
+</launch>

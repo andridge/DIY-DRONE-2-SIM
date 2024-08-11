@@ -1,0 +1,23 @@
+august_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Revolute 55_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_55
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute 56_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_56
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute 57_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_57
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute 58_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_58
+    pid: {p: 100.0, i: 0.01, d: 10.0}

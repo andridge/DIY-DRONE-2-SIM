@@ -1,0 +1,2 @@
+august_description
+-DCATKIN_DEVEL_PREFIX=/Users/andridgemunene/Desktop/openseasons/devel -DCMAKE_INSTALL_PREFIX=/Users/andridgemunene/Desktop/openseasons/install -G Unix Makefiles

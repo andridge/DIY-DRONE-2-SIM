@@ -1,0 +1,15 @@
+<launch>
+  <!-- Set the robot_description parameter using the URDF file -->
+   <param name="robot_description" textfile="$(find august_description)/urdf/august.urdf"/>
+  
+   <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="1"/>
+  <!-- Start the spawn_model service to spawn the robot model -->
+  <node name="august_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model august_description -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+  <!-- Include the empty_world launch file -->
+    <arg name="world" default="/Users/andridgemunene/Desktop/openseasons/src/august_description/worlds/venus.world"/>
+    <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="--verbose $(arg world)" />
+</launch>
