@@ -124,4 +124,8 @@
 	<control_joint>joint_back_left_prop</control_joint>
 	</plugin>
 </gazebo>
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+  </plugin>
+</gazebo>
 </robot>
