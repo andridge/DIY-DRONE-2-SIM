@@ -1,27 +1,41 @@
 <launch>
+  <!-- Load URDF to parameter server -->
+  <param name="robot_description" 
+         command="$(find xacro)/xacro '$(find august_description)/urdf/august.xacro'"/>
 
-  <!-- Load controller parameters -->
-  <rosparam file="$(find august_description)/launch/controller.yaml" command="load"/>
-
-  <!-- Spawn the robot model in Gazebo -->
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model august"/>
-
-  <!-- Start the controller spawner -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="august" args="Revolute 47_position_controller Revolute 48_position_controller Revolute 49_position_controller Revolute 50_position_controller joint_state_controller"/>
-
-  <!-- Start the robot state publisher -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-    <remap from="/joint_states" to="/august/joint_states"/>
-  </node>
-
-  <!-- Include the Gazebo world -->
+  <!-- Start Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find august_description)/worlds/alien.world"/>
-    <arg name="paused" value="true"/>
+    <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
+    <arg name="verbose" value="true"/>
   </include>
+
+  <!-- Spawn robot in Gazebo (with delay to ensure Gazebo is ready) -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model august"
+        respawn="false" output="screen"
+        launch-prefix="bash -c 'sleep 5; $0 $@'"/>
+
+  <!-- Load controller parameters -->
+  <rosparam file="$(find august_description)/launch/controller.yaml" command="load" ns="august"/>
+
+  <!-- Start robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen"/>
+
+  <!-- Start the controller spawner (with delay) -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+      respawn="false" output="screen"
+      args="august_controller/joint_state_controller 
+            august_controller/revolute_47_effort_controller
+            august_controller/revolute_48_effort_controller
+            august_controller/revolute_49_effort_controller
+            august_controller/revolute_50_effort_controller"
+      ns="/august"
+      launch-prefix="bash -c 'sleep 8; $0 $@'"/>
 
 </launch>

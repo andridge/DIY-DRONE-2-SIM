@@ -1,45 +1,45 @@
 <?xml version="1.0" ?>
 <robot name="august" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Revolute 47_tran">
+<transmission name="revolute_47_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Revolute 47">
+  <joint name="revolute_47">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Revolute 47_actr">
+  <actuator name="revolute_47_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Revolute 48_tran">
+<transmission name="revolute_48_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Revolute 48">
+  <joint name="revolute_48">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Revolute 48_actr">
+  <actuator name="revolute_48_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Revolute 49_tran">
+<transmission name="revolute_49_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Revolute 49">
+  <joint name="revolute_49">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Revolute 49_actr">
+  <actuator name="revolute_49_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Revolute 50_tran">
+<transmission name="revolute_50_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Revolute 50">
+  <joint name="revolute_50">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Revolute 50_actr">
+  <actuator name="revolute_50_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
