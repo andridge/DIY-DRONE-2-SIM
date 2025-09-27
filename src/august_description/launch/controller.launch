@@ -37,5 +37,8 @@
             august_controller/revolute_50_effort_controller"
       ns="/august"
       launch-prefix="bash -c 'sleep 8; $0 $@'"/>
+      
+  <node name="joint_talker" pkg="august_description" type="joint_talker" output="screen"/>
+
 
 </launch>

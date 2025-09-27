@@ -1,22 +1,129 @@
-<?xml_version="1.0" ?>
-<sdf version="1.4">
-	<world name="default">
-	
-		<scene>
-			<sky>
-				<clouds>
-					<speed>100</speed>
-				</clouds>
-			</sky>
-		</scene>
-	
-		<include>
-			<uri>model://ground_plane</uri>
-		</include>
-		
-		<include>
-			<uri>model://sun</uri>
-		</include>
-		
-	</world>
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="drone_test_world">
+
+    <!-- Default ground and sun -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Sky with clouds -->
+    <scene>
+      <sky>
+        <clouds>
+          <speed>5</speed>
+        </clouds>
+      </sky>
+    </scene>
+
+    <!-- Target at origin -->
+    <model name="target_origin">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>1</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>   <!-- Red -->
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Target 100 meters away -->
+    <model name="target_far">
+      <static>true</static>
+      <pose>100 0 0 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>1</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>   <!-- Blue -->
+            <diffuse>0 0 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Cones along the path -->
+    <include>
+      <uri>model://traffic_cone</uri>
+      <pose>20 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://traffic_cone</uri>
+      <pose>40 2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://traffic_cone</uri>
+      <pose>60 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://traffic_cone</uri>
+      <pose>80 1 0 0 0 0</pose>
+    </include>
+
+    <!-- Trees -->
+    <include>
+      <uri>model://tree</uri>
+      <pose>10 5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tree</uri>
+      <pose>50 -5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tree</uri>
+      <pose>90 4 0 0 0 0</pose>
+    </include>
+
+    <!-- Random balls for obstacles -->
+    <model name="ball1">
+      <static>true</static>
+      <pose>30 1 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient> <!-- Green -->
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="ball2">
+      <static>true</static>
+      <pose>70 -1 0.5 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient> <!-- Yellow -->
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
 </sdf>
