@@ -53,14 +53,14 @@
     <inertia ixx="5e-06" iyy="2.7e-05" izz="3.2e-05" ixy="1.2e-05" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.084483 -0.117659 -0.037559" rpy="0 0 0"/>
+    <origin xyz="0.084450 -0.117659 -0.037559" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://august_description/meshes/b_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
-    <origin xyz="0.084483 -0.117659 -0.037559" rpy="0 0 0"/>
+    <origin xyz="0.084450 -0.117659 -0.037559" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://august_description/meshes/b_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -119,7 +119,7 @@
 </joint>
 
 <joint name="revolute_48" type="continuous">
-  <origin xyz="-0.084483 0.117659 0.037559" rpy="0 0 0"/>
+  <origin xyz="-0.084450 0.117659 0.037559" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="b_1"/>
   <axis xyz="0.0 0.0 -1.0"/>
@@ -165,5 +165,24 @@
   <self_collide>false</self_collide>
 </gazebo>
 
+<gazebo>
+    <sensor type="imu" name="imu_sensor">
+      <always_on>true</always_on>
+      <update_rate>50</update_rate>
+      <visualize>false</visualize>
+      <topic>imu/data</topic>
+      <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <namespace>/august</namespace>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <bodyName>base_link</bodyName>
+        <updateRate>50.0</updateRate>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+      </plugin>
+    </sensor>
+</gazebo>
 
 </robot>

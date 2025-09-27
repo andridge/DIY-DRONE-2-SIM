@@ -51,9 +51,9 @@ int main(int argc, char **argv)
     enum State { START, TEST_47, TEST_48, TEST_49, TEST_50, ALL_ACTIVE, LIFT_OFF };
     State current_state = START;
 
-    double target_thrust = 0.1; // Target thrust for lift-off
+    double target_thrust = 10; // Target thrust for lift-off
     double current_thrust = 0.0;
-    double thrust_increment = 0.001; // Gradual increase per second
+    double thrust_increment = 0.01; // Gradual increase per second
 
     ROS_INFO("Starting rotor initialization sequence (clockwise only).");
 
@@ -69,28 +69,28 @@ int main(int argc, char **argv)
                 break;
 
             case TEST_47:
-                cmd47.data = 0.3; // Clockwise
+                cmd47.data = -0.3; // Clockwise
                 ROS_INFO("Rotor 47 spinning clockwise...");
                 current_state = TEST_48;
                 break;
 
             case TEST_48:
                 cmd47.data = 0.0;
-                cmd48.data = 0.3; // Clockwise (changed from -0.3)
+                cmd48.data = -0.3; // Clockwise (changed from -0.3)
                 ROS_INFO("Rotor 48 spinning clockwise...");
                 current_state = TEST_49;
                 break;
 
             case TEST_49:
                 cmd48.data = 0.0;
-                cmd49.data = 0.3; // Clockwise
+                cmd49.data = -0.3; // Clockwise
                 ROS_INFO("Rotor 49 spinning clockwise...");
                 current_state = TEST_50;
                 break;
 
             case TEST_50:
                 cmd49.data = 0.0;
-                cmd50.data = 0.3; // Clockwise (changed from -0.3)
+                cmd50.data = -0.3; // Clockwise (changed from -0.3)
                 ROS_INFO("Rotor 50 spinning clockwise...");
                 current_state = ALL_ACTIVE;
                 break;
