@@ -211,3 +211,5 @@ add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 add_executable(drone_mixer src/drone_mixer.cpp)
 target_link_libraries(drone_mixer ${catkin_LIBRARIES})
 
+add_executable(test_imu src/test_imu.cpp)
+target_link_libraries(test_imu ${catkin_LIBRARIES})
