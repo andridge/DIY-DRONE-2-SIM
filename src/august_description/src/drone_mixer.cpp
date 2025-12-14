@@ -1,19 +1,10 @@
 #include <geometry_msgs/Twist.h>
-#include <jsoncpp/json/json.h>
+#include "sensor_msgs/JointState.h"
 #include <math.h>
 #include <mutex>
 #include <ros/ros.h>
 #include <sensor_msgs/Imu.h>
 #include <std_msgs/Float64.h>
-#include <thread>
-
-// === FIXED WEBSOCKETPP SETUP ===
-#define ASIO_STANDALONE
-#include <asio.hpp>
-#include <websocketpp/client.hpp>
-#include <websocketpp/config/asio_no_tls.hpp>
-
-typedef websocketpp::client<websocketpp::config::asio> ws_client;
 
 // ====================== YOUR ORIGINAL CLASSES — 100% UNTOUCHED
 // ======================
@@ -201,159 +192,11 @@ private:
   std::mutex mtx;
 };
 
-// ====================== TUNNELBRIDGE — FIXED FOR CORRECT WEBSOCKETPP
-// ======================
-class TunnelBridge {
-private:
-  ws_client m_ws_client;
-  websocketpp::connection_hdl hdl;
-  std::mutex ws_mutex;
-  bool connected = false;
-  std::string ngrok_url;
-  ros::Publisher cmd_vel_ai_pub;
-
-public:
-  TunnelBridge() {
-    cmd_vel_ai_pub =
-        ros::NodeHandle().advertise<geometry_msgs::Twist>("/cmd_vel_ai", 10);
-    system("pkill -f ngrok >/dev/null 2>&1");
-    system("ngrok tcp 1001 --log=stdout >/tmp/ngrok.log 2>&1 &");
-    ros::Duration(8.0).sleep(); // Give ngrok time to start
-    ngrok_url = get_ngrok_url();
-    if (ngrok_url.empty()) {
-      ROS_FATAL(
-          "NGROK FAILED - Is ngrok running? Check: curl http://localhost:4040");
-      return;
-    }
-    ROS_INFO("NGROK TUNNEL → %s", ngrok_url.c_str());
-
-    m_ws_client.clear_access_channels(websocketpp::log::alevel::all);
-    m_ws_client.clear_error_channels(websocketpp::log::elevel::all);
-    m_ws_client.init_asio();
-
-    m_ws_client.set_open_handler([this](websocketpp::connection_hdl h) {
-      hdl = h;
-      connected = true;
-      ROS_INFO("TUNNEL CONNECTED → AI DOCKER");
-    });
-
-    m_ws_client.set_message_handler(
-        [this](websocketpp::connection_hdl, ws_client::message_ptr msg) {
-          handle_incoming(msg->get_payload());
-        });
-
-    connect();
-    std::thread([this]() { m_ws_client.run(); }).detach();
-  }
-
-  std::string get_ngrok_url() {
-    FILE *p =
-        popen("curl -s http://127.0.0.1:4040/api/tunnels 2>/dev/null", "r");
-    if (!p)
-      return "";
-
-    char buffer[2048] = {0};
-    std::string result;
-    while (fgets(buffer, sizeof(buffer), p))
-      result += buffer;
-    pclose(p);
-
-    Json::Value root;
-    Json::CharReaderBuilder builder;
-    std::unique_ptr<Json::CharReader> reader(builder.newCharReader());
-    std::string errs;
-
-    if (!reader->parse(result.c_str(), result.c_str() + result.size(), &root,
-                       &errs))
-      return "";
-
-    for (const auto &tunnel : root["tunnels"]) {
-      if (tunnel["proto"].asString() == "tcp") {
-        std::string url =
-            tunnel["public_url"].asString(); // tcp://0.tcp.ngrok.io:12345
-        size_t start = url.find("://") + 3;
-        size_t colon = url.find(":", start);
-        if (colon != std::string::npos) {
-          return "ws://" + url.substr(start, colon - start) + ":" +
-                 url.substr(colon + 1);
-        }
-      }
-    }
-    return "";
-  }
-
-  void connect() {
-    if (ngrok_url.empty())
-      return;
-    websocketpp::lib::error_code ec;
-    auto con = m_ws_client.get_connection(ngrok_url, ec);
-    if (!ec)
-      m_ws_client.connect(con);
-    else
-      ROS_ERROR("WebSocket connect error: %s", ec.message().c_str());
-  }
-
-  void send(const Json::Value &j) {
-    if (!connected)
-      return;
-    Json::StreamWriterBuilder wbuilder;
-    wbuilder["indentation"] = "";
-    std::string msg = Json::writeString(wbuilder, j);
-    std::lock_guard<std::mutex> lock(ws_mutex);
-    m_ws_client.send(hdl, msg, websocketpp::frame::opcode::text);
-  }
-
-  void handle_incoming(const std::string &payload) {
-    Json::Value root;
-    Json::CharReaderBuilder rbuilder;
-    std::unique_ptr<Json::CharReader> reader(rbuilder.newCharReader());
-    std::string errs;
-    if (!reader->parse(payload.c_str(), payload.c_str() + payload.size(), &root,
-                       &errs))
-      return;
-
-    if (root["type"] == "cmd_vel_ai") {
-      geometry_msgs::Twist cmd;
-      cmd.linear.x = root["linear_x"].asDouble();
-      cmd.linear.y = root["linear_y"].asDouble();
-      cmd.linear.z = root["linear_z"].asDouble();
-      cmd.angular.z = root["angular_z"].asDouble();
-      cmd_vel_ai_pub.publish(cmd);
-      ROS_INFO("AI CONTROL → Drone: [X:%.2f Y:%.2f Z:%.2f Yaw:%.2f]",
-               cmd.linear.x, cmd.linear.y, cmd.linear.z, cmd.angular.z);
-    }
-  }
-
-  void send_imu(double ax, double ay, double az, double gx, double gy,
-                double gz) {
-    Json::Value j;
-    j["type"] = "imu";
-    j["ax"] = ax;
-    j["ay"] = ay;
-    j["az"] = az;
-    j["gx"] = gx;
-    j["gy"] = gy;
-    j["gz"] = gz;
-    send(j);
-  }
-
-  void send_motor_cmds(double m47, double m48, double m49, double m50) {
-    Json::Value j;
-    j["type"] = "motors";
-    j["m47"] = m47;
-    j["m48"] = m48;
-    j["m49"] = m49;
-    j["m50"] = m50;
-    send(j);
-  }
-};
-
-TunnelBridge *tunnel = nullptr;
 ros::Publisher pub47, pub48, pub49, pub50;
 
 void cmdVelCallback(const geometry_msgs::Twist::ConstPtr &msg,
                     DroneMixer *mixer) {
-  if (!mixer || !tunnel)
+  if (!mixer)
     return;
   mixer->setDesiredFromTwist(msg);
   double pitch_corr = 0.0, roll_corr = 0.0;
@@ -373,18 +216,25 @@ void cmdVelCallback(const geometry_msgs::Twist::ConstPtr &msg,
   pub48.publish(cmd48);
   pub49.publish(cmd49);
   pub50.publish(cmd50);
-  tunnel->send_motor_cmds(cmd47.data, cmd48.data, cmd49.data, cmd50.data);
   ROS_INFO("Motor cmds -> 47: %.2f, 48: %.2f, 49: %.2f, 50: %.2f (corr p:%.3f "
            "r:%.3f)",
            cmd47.data, cmd48.data, cmd49.data, cmd50.data, pitch_corr,
            roll_corr);
 }
 
-void imuCallback(const sensor_msgs::Imu::ConstPtr &msg) {
-  if (tunnel)
-    tunnel->send_imu(msg->linear_acceleration.x, msg->linear_acceleration.y,
-                     msg->linear_acceleration.z, msg->angular_velocity.x,
-                     msg->angular_velocity.y, msg->angular_velocity.z);
+std::vector<double> joint_positions(4, 0.0);
+
+void jointStateCallback(const sensor_msgs::JointState::ConstPtr& msg)
+{
+  for (size_t i = 0; i < msg->name.size(); ++i)
+  {
+    if (msg->name[i] == "revolute_47_joint") joint_positions[0] = msg->position[i];
+    else if (msg->name[i] == "revolute_48_joint") joint_positions[1] = msg->position[i];
+    else if (msg->name[i] == "revolute_49_joint") joint_positions[2] = msg->position[i];
+    else if (msg->name[i] == "revolute_50_joint") joint_positions[3] = msg->position[i];
+  }
+  ROS_INFO("Joint positions: [%.3f, %.3f, %.3f, %.3f]",
+           joint_positions[0], joint_positions[1], joint_positions[2], joint_positions[3]);
 }
 
 int main(int argc, char **argv) {
@@ -402,16 +252,15 @@ int main(int argc, char **argv) {
 
   DroneMixer mixer;
   mixer.init(nh);
-  tunnel = new TunnelBridge();
 
   ros::Subscriber cmd_sub = nh.subscribe<geometry_msgs::Twist>(
       "/cmd_vel", 10, boost::bind(cmdVelCallback, _1, &mixer));
-  ros::Subscriber imu_sub =
-      nh.subscribe<sensor_msgs::Imu>("/august/imu/data", 50, imuCallback);
 
-  ROS_INFO("DRONE_MIXER + NGROK TUNNEL ACTIVE – TWO-WAY AI LINK READY");
+  ros::Subscriber joints_sub =
+      nh.subscribe<sensor_msgs::JointState>("/joint_states", 10, jointStateCallback);
+
+  ROS_INFO("DRONE_MIXER ACTIVE – AI /cmd_vel → motor efforts");
   ros::spin();
 
-  delete tunnel;
   return 0;
 }

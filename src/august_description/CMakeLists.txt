@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(JSONCPP jsoncpp REQUIRED)
 find_package(Threads REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system thread)
 
 catkin_package(
 #  INCLUDE_DIRS include
@@ -27,6 +28,8 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${JSONCPP_INCLUDE_DIRS}          # ← ADDED
+  /usr/include
+  ${Boost_INCLUDE_DIRS}
 )
 
 # ← YOUR ORIGINAL NODES 100% UNCHANGED
@@ -44,6 +47,7 @@ target_link_libraries(drone_mixer
   ${catkin_LIBRARIES} 
   ${JSONCPP_LIBRARIES} 
   ${CMAKE_THREAD_LIBS_INIT}   # pthread for std::thread
+  ${Boost_LIBRARIES}
 )
 
 add_executable(test_imu src/test_imu.cpp)
