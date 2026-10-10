@@ -1,6 +1,6 @@
 <launch>
   <!-- Set the robot_description parameter using the URDF file -->
-  <param name="robot_description" command="$(find august_description)/urdf/august.urdf"/>
+  <param name="robot_description" command="$(find august_description)/urdf/august.xacro"/>
 
   <!-- Start the spawn_model service to spawn the robot model -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model august" />
